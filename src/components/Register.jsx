@@ -4,7 +4,7 @@ import BlurOnIcon from "@mui/icons-material/BlurOn";
 import { TextField } from "@mui/material";
 import googleLogo from "../assets/google.png";
 
-const Login = () => {
+const Register = () => {
   const Container = styled.div`
     height: 100vh;
     width: 100vw;
@@ -94,6 +94,11 @@ const Login = () => {
     gap: 18px;
     width: 80%;
   `;
+  const Hinput = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  `;
   const Button = styled.button`
     width: 36%;
     font-size: 16px;
@@ -125,8 +130,11 @@ const Login = () => {
     console.log(event);
 
     console.log("Form Submitted");
-    console.log("Email: ", event.target[0].value);
-    console.log("Password: ", event.target[2].value);
+    console.log("First Name: ", event.target[0].value);
+    console.log("Last Name: ", event.target[2].value);
+    console.log("Email: ", event.target[4].value);
+    console.log("Password: ", event.target[6].value);
+    console.log("Confirm Password: ", event.target[8].value);
   };
   return (
     <Container>
@@ -134,7 +142,7 @@ const Login = () => {
         <Icon>
           <BlurOnIcon fontSize="large" />
         </Icon>
-        <Title>Sign In</Title>
+        <Title>Sign Up</Title>
         {/* <Subtitle></Subtitle> */}
         <Google>
           <Img src={googleLogo} /> Sign in with Google
@@ -144,25 +152,36 @@ const Login = () => {
           <OR>or</OR>
           <Line></Line>
         </LineSection>
+
         <Form onSubmit={handleSubmit}>
           <Input>
+            <Hinput>
+              <TextField id="fname" label="First name" variant="outlined" />
+              <TextField id="lname" label="Last name" variant="outlined" />
+            </Hinput>
             <TextField id="email" label="Email address" variant="outlined" />
             <TextField
-              id="pswd"
+              id="password"
               label="Password"
               type="password"
               variant="outlined"
             />
+            <TextField
+              id="confirmpswd"
+              label="Confirm Password"
+              type="password"
+              variant="outlined"
+            />
           </Input>
-          <Button>Login</Button>
+          <Button>Register</Button>
         </Form>
         <Subtitle>
-          Don't have an account?
-          <Link> Sign up</Link>
+          Do you have an account?
+          <Link> Sign in</Link>
         </Subtitle>
       </Wrapper>
     </Container>
   );
 };
 
-export default Login;
+export default Register;
