@@ -92,6 +92,17 @@ const Input = styled.div`
   flex-direction: column;
   gap: 18px;
   width: 80%;
+  /* border: 1px solid black; */
+`;
+const FrgtPassword = styled.div`
+  width: 80%;
+  display: flex;
+  justify-content: end;
+  color: #33333398;
+  &:hover {
+    color: #333333e9;
+    cursor: pointer;
+  }
 `;
 const Button = styled.button`
   width: 36%;
@@ -177,6 +188,7 @@ const Login = () => {
               onChange={handleChange}
             />
           </Input>
+          <FrgtPassword>forgot password?</FrgtPassword>
           <Button>Login</Button>
         </Form>
         <Subtitle>
