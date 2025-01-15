@@ -26,18 +26,20 @@ const HeroSubheadline = styled.p`
 `;
 
 const CTAButton = styled.button`
-  background: #ffffff9f;
-  color: #3c1414;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 0.75rem 2rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-
+  width: 24%;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #fff;
+  color: #0073a9;
+  padding: 12px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.3s ease;
+  margin-top: 12px;
   &:hover {
-    background: #f0f0f0;
+    cursor: pointer;
+    border: 1px solid #0073a9;
   }
 `;
 
@@ -50,7 +52,7 @@ const HeroImage = styled.img`
 
 
 
-export default function HeroSection() {
+const HeroSection = () => {
   return (
     <HeroSectionWrapper>
       <Tagline>Your one-stop solution for social media management</Tagline>
@@ -64,3 +66,5 @@ export default function HeroSection() {
     </HeroSectionWrapper>
   );
 }
+
+export default HeroSection;
